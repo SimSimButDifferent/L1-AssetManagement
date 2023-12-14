@@ -30,8 +30,6 @@ contract AssetManagement {
         if (_assetValue < 0) {
             // Throws an error if value is not above zero, otherwise sets status to true.
             revert("Asset value must be above zero");
-        } else {
-            lastAssetStatus = true;
         }
 
         lastAssetId++; // Adds 1 to addressId counter
