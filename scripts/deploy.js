@@ -7,14 +7,14 @@ async function main() {
 
   console.log("Deploying...");
 
-  assetManagement = await AssetManagement.deploy;
+  assetManagement = await AssetManagement.deploy();
 
-  console.log("AssetManagement deployed!");
+  await assetManagement.waitForDeployment();
+
+  console.log(`AssetManagement deployed to: ${assetManagement.target}`);
 }
 
-main()
-  .then(() => process.exit(0))
-  .catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
