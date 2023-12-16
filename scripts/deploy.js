@@ -4,11 +4,12 @@ async function main() {
   const AssetManagement = await hre.ethers.getContractFactory(
     "AssetManagement"
   );
-  const assetManagement = await AssetManagement.deploy();
 
-  await assetManagement.deployed();
+  console.log("Deploying...");
 
-  console.log("AssetManagement deployed to:", assetManagement.address);
+  assetManagement = await AssetManagement.deploy;
+
+  console.log("AssetManagement deployed!");
 }
 
 main()
