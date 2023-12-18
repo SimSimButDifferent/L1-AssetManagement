@@ -20,5 +20,8 @@
   "scripts": {
     "hh node": "yarn hardhat node",
     "hh deploy": "yarn hardhat run scripts/deploy.js"
+  },
+  "dependencies": {
+    "prettier": "^3.1.1"
   }
 }

@@ -27,9 +27,13 @@ contract AssetManagement {
         int _assetValue,
         string memory _assetDescription
     ) public {
-        if (_assetValue < 0) {
+        if (_assetValue <= 0) {
             // Throws an error if value is not above zero, otherwise sets status to true.
             revert("Asset value must be above zero");
+        }
+
+        if (bytes(_assetDescription).length == 0) {
+            revert("Asset must have a description");
         }
 
         lastAssetId++; // Adds 1 to addressId counter
