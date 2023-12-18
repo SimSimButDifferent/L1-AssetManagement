@@ -1,20 +1,19 @@
-const hre = require("hardhat");
+const hre = require("hardhat")
 
 async function main() {
-  const AssetManagement = await hre.ethers.getContractFactory(
-    "AssetManagement"
-  );
+    const AssetManagement =
+        await hre.ethers.getContractFactory("AssetManagement")
 
-  console.log("Deploying...");
+    console.log("Deploying...")
 
-  assetManagement = await AssetManagement.deploy();
+    assetManagement = await AssetManagement.deploy()
 
-  await assetManagement.waitForDeployment();
+    await assetManagement.waitForDeployment()
 
-  console.log(`AssetManagement deployed to: ${assetManagement.target}`);
+    console.log(`AssetManagement deployed to: ${assetManagement.target}`)
 }
 
 main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+    console.error(error)
+    process.exitCode = 1
+})

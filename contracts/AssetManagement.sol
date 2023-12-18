@@ -17,8 +17,8 @@ contract AssetManagement {
     mapping(uint256 => Asset) private assets; // Mapping to give asset details using its assetId.
 
     /* state variables */
-    uint256 private lastAssetId; // Counter to keep track of last asset Id.
-    bool private lastAssetStatus = false; // last asset status to update status automatically.
+    uint256 public lastAssetId; // Counter to keep track of last asset Id.
+    bool public lastAssetStatus = false; // last asset status to update status automatically.
 
     /* functions */
 
@@ -40,7 +40,7 @@ contract AssetManagement {
         Asset memory newAsset = Asset(
             lastAssetId,
             _assetValue,
-            lastAssetStatus,
+            lastAssetStatus = true,
             msg.sender,
             _assetDescription
         ); // Creates a new asset
